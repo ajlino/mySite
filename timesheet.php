@@ -30,27 +30,32 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-12 topCol">
-      <div class="name">
+    <div class="col topCol">
+      <!-- <div class="name">
         <h3 class="result"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
       </div>
       <div class="date">
         <h3 id="tsPayPeriod"></h3>
-      </div>
+      </div> -->
     </div>
   </div>
 
   <!-- <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet"> -->
-    <div class="row justify-content-center ">
-      <div class="col-lg-4 grandparent leftCol" id="leftCol">
+    <div class="row no-gutters justify-content-center mt-3 ">
+      <div class=" col-lg-4 grandparent leftCol" id="leftCol">
       </div>
 
-      <div class="col-lg-4 grandparent" id="rightCol">
+      <div class=" col-lg-4 grandparent" id="rightCol">
 
       </div>
 
-      <div class="col-sm-4 farRightCol" id="farRightCol">
-        <p>Hello</p>
+      <div class=" col-lg-4 farRightCol" id="farRightCol">
+        <div class="name">
+          <h3 class="result"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
+        </div>
+        <div class="date">
+          <h3 id="tsPayPeriod"></h3>
+        </div>
       </div>
     </div>
 
