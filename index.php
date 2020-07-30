@@ -4,12 +4,12 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: timesheet.php");
     exit;
 }
 
 // Include config file
-require_once "php/timesheetDBH.php";
+require_once "includes/php/timesheetDBH.php";
 
 // Define variables and initialize with empty values
 $username = $password = "";

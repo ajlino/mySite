@@ -1,0 +1,15 @@
+.leftCol{
+  background-color: grey;
+}
+
+#rightCol{
+  background-color: navy;
+}
+
+#dayOfMonth{
+  width: 210px;
+}
+
+.value{
+  background-color: navy;
+}
