@@ -33,7 +33,7 @@ $(document).ready(function(){
 
   for (var x=1; x<11; x++){
     var formDate = momentClone.format("dd, MMM DD");
-    var html='<div class="form-row"> <form class="form-inline"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" class="form-control text-center value" min="0" max="99" placeholder="0" value="0" aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form> </div>'
+    var html=' <form class="form-inline"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" class="form-control text-center value" min="0" max="99" placeholder="0" value="0" aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form>'
     $("#leftCol").append(html);
     momentClone.add(1, "days");
   }

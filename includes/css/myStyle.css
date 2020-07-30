@@ -3,6 +3,9 @@
   text-align: center;
 }
 
+.form1{
+  display: inline;
+}
 
 .leftCol{
   /* background-color: grey; */
@@ -21,9 +24,11 @@
       max-width: 70px;
 }
 
-#rightCol{
+.farRightCol{
   background-color: navy;
 }
+
+
 
 #dayOfMonth{
   width: 210px;
