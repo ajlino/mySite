@@ -1,5 +1,24 @@
+
+.jumbotron{
+  text-align: center;
+}
+
+
 .leftCol{
-  background-color: grey;
+  /* background-color: grey; */
+}
+
+
+.input-group>.input-group-prepend {
+    min-width: 130px;
+    /* max-width: 100px; */
+}
+.input-group .input-group-text {
+    width: 100%;
+}
+
+.value{
+      max-width: 70px;
 }
 
 #rightCol{
@@ -10,6 +29,6 @@
   width: 210px;
 }
 
-.value{
+/* .value{
   background-color: navy;
-}
+} */

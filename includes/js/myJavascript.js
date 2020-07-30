@@ -32,8 +32,8 @@ $(document).ready(function(){
 		var momentClone=momentOrigin.clone();
 
   for (var x=1; x<11; x++){
-    var dayOfMonth = momentClone.format("dddd, MMMM Do");
-    var html='<div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups"> <div class="input-group-prepend "> <span class="input-group-text" id="dayOfMonth">'+dayOfMonth+'</span> </div> <div class="btn-group btn-group-sm mr-2" role="group" aria-label="First group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> <button type="button" class="btn btn-secondary" data-selected="false" value="">Other</button> </div> <div class="input-group"> <input type="text" name="hoursDay'+x+'" class="form-control text-center value" placeholder="Enter Hours" value="0" aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div></div>'
+    var formDate = momentClone.format("dd, MMM DD");
+    var html='<div class="form-row"> <form class="form-inline"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" class="form-control text-center value" min="0" max="99" placeholder="0" value="0" aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form> </div>'
     $("#leftCol").append(html);
     momentClone.add(1, "days");
   }

@@ -40,17 +40,19 @@
     </div>
   </div>
 
-  <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet">
+  <!-- <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet"> -->
     <div class="row justify-content-center ">
       <div class="col-4  grandparent leftCol" id="leftCol">
       </div>
+
       <div class="col-4 grandparent" id="rightCol">
       </div>
-      <!-- <div class="col-2 farRightCol" id="farRightCol">
+
+      <div class="col-4 farRightCol" id="farRightCol">
         <p>Hello</p>
-      </div> -->
+      </div>
     </div>
-  </form>
+
 </div>
 
 </body>
