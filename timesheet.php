@@ -18,6 +18,7 @@
   <script src="js/getDateforNewSheet.js"></script>
   <script src="js/timeSheetSubmitAjax.js"></script>
   <script src="includes\js\newTimesheet.js"></script>
+  <script type="text/javascript" src="includes/js/button-toggle.js"></script>
 
 </head>
 
@@ -47,15 +48,15 @@
             <option value="2023">2023</option>
           </select>
           <select class="form-control" id="month">
-            <option value="0">January</option>
-            <option value="1">February</option>
-            <option value="2">March</option>
-            <option value="3">April</option>
-            <option value="4">May</option>
-            <option value="5">June</option>
-            <option value="6">July</option>
-            <option value="7">August</option>
-            <option value="8">September</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
             <option value="10">November</option>
             <option value="11">December</option>
           </select>
@@ -67,6 +68,8 @@
         <div class="date">
           <h3 id="tsPayPeriod"></h3>
         </div>
+        <div class="tallyHours"></div>
+          <h3 id="tallyHours">DEMO</h3>
       </div>
 
 

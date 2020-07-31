@@ -1,3 +1,7 @@
+
+
+
+
 $(document).ready(function(){
 
 
@@ -14,10 +18,8 @@ $(document).ready(function(){
 	}
 
 		$("#tsPayPeriod").text(m+" "+y);
-		$("#mth").val(m);
-		$("#yr").val(y);
+		$("#month").val(m);
 		$("#year").val(y);
-		$("#month").val(m-1);
 
 		// $("#timesheetPeriod").text(moment(new Date(y,m)).format("YYYY MMMM"));
 
@@ -47,7 +49,7 @@ $(document).ready(function(){
   for (var x=0; x<monthMiddle; x++){
 		momentClone=momentOrigin.clone().add(x, "days");
     var formDate = momentClone.format("dd, MMM DD");
-    var html=' <form class="form-inline justify-content-center"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" class="form-control text-center value" min="0" max="99" placeholder="0" value="0" aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form>'
+    var html=' <form class="form-inline justify-content-center"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" id="hoursDay'+x+'" class="form-control text-center totHoursBox" min="0" max="99" placeholder="0" value=0 aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form>'
     $("#middleCol").append(html);
 
 
@@ -55,31 +57,31 @@ $(document).ready(function(){
   for (var x=monthMiddle; x<(lastDay); x++){
 		momentClone=momentOrigin.clone().add(x, "days");
     var formDate = momentClone.format("dd, MMM DD");
-		var html=' <form class="form-inline justify-content-center"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" class="form-control text-center value" min="0" max="99" placeholder="0" value="0" aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form>'
+		var html=' <form class="form-inline justify-content-center"> <div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" id="hoursDay'+x+'" class="form-control text-center totHoursBox" min="0" max="99" placeholder="0" value=0 aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div> </form>'
     $("#rightCol").append(html);
 
   }
 
-  $(".btn-secondary").click(function(){
-    if ($(this).attr("data-selected")=="true"){
-      $(this).css("background-color", "grey");
-      $(this).attr("data-selected","false");
-      $(this).parentsUntil(".grandparent").find(".value")
-        .css("background-color", "white")
-        .css("color", "black")
-        .val(0);
-
-    } else{
-     $(this).css("background-color", "navy");
-     $(this).siblings()
-       .attr("data-selected", "false")
-       .css("background-color", "grey");
-     $(this).attr("data-selected","true");
-     $(this).parentsUntil(".grandparent").find(".value")
-       .css("background-color", "white")
-       .css("color", "black")
-       .val($(this).val());
-    }
-  });
+  // $(".btn-secondary").click(function(){
+  //   if ($(this).attr("data-selected")=="true"){
+  //     $(this).css("background-color", "grey");
+  //     $(this).attr("data-selected","false");
+  //     $(this).parentsUntil(".grandparent").find(".value")
+  //       .css("background-color", "white")
+  //       .css("color", "black")
+  //       .val(0);
+	//
+  //   } else{
+  //    $(this).css("background-color", "navy");
+  //    $(this).siblings()
+  //      .attr("data-selected", "false")
+  //      .css("background-color", "grey");
+  //    $(this).attr("data-selected","true");
+  //    $(this).parentsUntil(".grandparent").find(".value")
+  //      .css("background-color", "white")
+  //      .css("color", "black")
+  //      .val($(this).val());
+  //   }
+  // });
 
 });
