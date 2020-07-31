@@ -20,17 +20,6 @@ $(document).ready(function(){
        .val($(this).val());
     };
 
-    // Calculate new tally
-    // var tally=0;
-    // for (x=1; x<29; x++){
-    //   var id="hoursDay"+x;
-    //
-    //   tally+=parseInt($(id).val());
-    //   console.log(id+":"+ $("#id").val());
-    //
-    // }
-    // $("#tallyHours").text(tally);
-
     updateTotHours();
 
     function updateTotHours(){

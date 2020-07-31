@@ -19,7 +19,7 @@
   <script src="js/timeSheetSubmitAjax.js"></script>
   <script src="includes\js\newTimesheet.js"></script>
   <script type="text/javascript" src="includes/js/button-toggle.js"></script>
-
+  <script src="includes/js/countHours.js"></script>
 </head>
 
 <body>
