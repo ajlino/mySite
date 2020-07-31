@@ -17,6 +17,7 @@
   <script src="includes\js\moment.js"></script>
   <script src="js/getDateforNewSheet.js"></script>
   <script src="js/timeSheetSubmitAjax.js"></script>
+  <script src="includes\js\newTimesheet.js"></script>
 
 </head>
 
@@ -29,27 +30,37 @@
 
 <div class="container">
 
-  <div class="row">
-    <div class="col topCol">
-      <!-- <div class="name">
-        <h3 class="result"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
-      </div>
-      <div class="date">
-        <h3 id="tsPayPeriod"></h3>
-      </div> -->
-    </div>
-  </div>
+
 
   <!-- <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet"> -->
-    <div class="row no-gutters justify-content-center mt-3 ">
-      <div class=" col-lg-4 grandparent leftCol" id="leftCol">
-      </div>
+    <div class="row wrapper mt-3 ">
 
-      <div class=" col-lg-4 grandparent" id="rightCol">
-
-      </div>
-
-      <div class=" col-lg-4 farRightCol" id="farRightCol">
+      <div class=" col-lg text-center leftCol" id="leftCol">
+        <h3>Pay Period</h3>
+        <div class="form-group choosePayPeriod">
+          <select class="form-control" id="year">
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+            <option value="2023">2023</option>
+            <option value="2023">2023</option>
+            <option value="2023">2023</option>
+          </select>
+          <select class="form-control" id="month">
+            <option value="0">January</option>
+            <option value="1">February</option>
+            <option value="2">March</option>
+            <option value="3">April</option>
+            <option value="4">May</option>
+            <option value="5">June</option>
+            <option value="6">July</option>
+            <option value="7">August</option>
+            <option value="8">September</option>
+            <option value="10">November</option>
+            <option value="11">December</option>
+          </select>
+          <button type="button" class="btn btn-primary" id="createTimesheet">Create</button>
+        </div>
         <div class="name">
           <h3 class="result"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
         </div>
@@ -57,8 +68,17 @@
           <h3 id="tsPayPeriod"></h3>
         </div>
       </div>
-    </div>
 
+
+      <div class=" col-lg  grandparent middleCol" id="middleCol">
+      </div>
+
+      <div class=" col-lg grandparent rightCol" id="rightCol">
+
+      </div>
+
+
+    </div>
 </div>
 
 </body>

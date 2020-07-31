@@ -3,10 +3,38 @@
   text-align: center;
 }
 
-
+.topCol{
+  background-color: AntiqueWhite ;
+  margin-left: 15px;
+  margin-right: 15px;
+}
 
 .leftCol{
-  /* background-color: grey; */
+  background: rgb(218,244,255);
+  background: linear-gradient(180deg, rgba(218,244,255,1) 0%, rgba(225,241,247,1) 43%, rgba(255,255,255,1) 100%);
+  margin-top: -20px;
+  margin-bottom:  -20px;
+  border-right: solid thin black;
+}
+
+.middleCol{
+  /* background-color: Azure ; */
+  /* padding-left: 60px; */
+}
+
+.wrapper{
+  background-color: #F1F1F1;
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-width: thin;
+  border-color: black;
+  border-style: solid;
+
+}
+.rightCol{
+  /* background-color: Azure ; */
+
 }
 
 .topCol{
@@ -22,20 +50,10 @@
     width: 100%;
 }
 
-.value{
-      max-width: 70px;
+.input-group>.value {
+    min-width: 60px;
+    max-width:220px;
 }
-
-.farRightCol{
-  background-color: AntiqueWhite;
+.input-group .input-group-text {
+    width: 100%;
 }
-
-
-
-#dayOfMonth{
-  width: 210px;
-}
-
-/* .value{
-  background-color: navy;
-} */
