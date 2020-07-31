@@ -23,12 +23,17 @@ $(document).ready(function(){
     updateTotHours();
 
     function updateTotHours(){
-      sum=0;
+      sumHours=0;
+      sumShifts=0;
       $("input[name^='hoursDay']").each(function(){
-        sum+=Number($(this).val());
+        sumHours+=Number($(this).val());
+        if ($(this).val()>0){
+          sumShifts++;
+        }
         console.log($(this).val())
       });
-      $("#tallyHours").text(sum);
+      $("#tallyHours").text(sumHours);
+      $("#tallyShifts").text(sumShifts);
     }
 
 

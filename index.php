@@ -66,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["lastName"] = $lastName;
 
                             // Redirect user to welcome page
-                            header("location: submitTimesheet.php");
+                            header("location: timesheet.php");
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";

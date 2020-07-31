@@ -2,16 +2,24 @@
 $(document).ready(function(){
 
   $("input[name^='hoursDay']").change(function(){
-    sum=0;
+    var sumHours=0;
+    var sumShifts=0;
+
     $("input[name^='hoursDay']").each(function(){
-      sum+=Number($(this).val());
+      sumHours+=Number($(this).val());
+      if ($(this).val()>0){
+        sumShifts++;
+      }
       console.log($(this).val())
     });
-    $("#tallyHours").text(sum);
+    $("#tallyHours").text(sumHours);
+    $("#tallyShifts").text(sumShifts);
 
     $(this).parentsUntil(".grandparent").find(".btn-secondary")
       .css("background-color", "grey")
       .attr("data-selected","false");
+
+
 
   });
 });

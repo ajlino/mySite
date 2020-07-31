@@ -26,7 +26,7 @@
 
 <div class="jumbotron">
     <h1>A.W.E.S.O.M -O 4000</h1>
-    <p>The Website Robot</p>
+    <p>The Timesheet Robot</p>
 </div>
 
 <div class="container">
@@ -57,8 +57,9 @@
             <option value="7">July</option>
             <option value="8">August</option>
             <option value="9">September</option>
-            <option value="10">November</option>
-            <option value="11">December</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
           </select>
           <button type="button" class="btn btn-primary" id="createTimesheet">Create</button>
         </div>
@@ -68,8 +69,16 @@
         <div class="date">
           <h3 id="tsPayPeriod"></h3>
         </div>
-        <div class="tallyHours"></div>
-          <h3 id="tallyHours">DEMO</h3>
+        <div class="tallyHours">
+          <br />
+          <h3>Total Hours</h3>
+          <h1 id="tallyHours">0</h1>
+        </div>
+        <div class="tallyShifts">
+          <br />
+          <h3>Total Shifts</h3>
+          <h1 id="tallyShifts">0</h1>
+        </div>
       </div>
 
 
