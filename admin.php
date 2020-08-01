@@ -27,14 +27,13 @@
       <h1>A.W.E.S.O.M -O 4000</h1>
 
         <div class="row justify-content-center">
-          <div class="col-3">
-            <button type=button  disabled class="btn btn-tsButton admin" id="admin">Admin Options</button>
+          <div class="col">
           </div>
-          <div class="col-3">
+          <div class="col">
                 <p>The Timesheet Robot</p>
                 <p class="admin">Administrative</p>
           </div>
-          <div class="col-3">
+          <div class="col">
             <form action="logout.php">
               <button type="submit"  class="btn btn-tsButton logout" id="logout">Logout</button>
             </form>
