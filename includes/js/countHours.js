@@ -16,7 +16,7 @@ $(document).ready(function(){
     $("#tallyShifts").text(sumShifts);
 
     $(this).parentsUntil(".grandparent").find(".btn-secondary")
-      .css("background-color", "grey")
+      .css("background-color", "#51616F")
       .attr("data-selected","false");
 
 

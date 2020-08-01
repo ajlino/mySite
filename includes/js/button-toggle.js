@@ -1,7 +1,7 @@
 $(document).ready(function(){
   $(".btn-secondary").click(function(){
     if ($(this).attr("data-selected")=="true"){
-      $(this).css("background-color", "grey");
+      $(this).css("background-color", "#51616F");
       $(this).attr("data-selected","false");
       $(this).parentsUntil(".grandparent").find(".totHoursBox")
         .css("background-color", "white")
@@ -9,10 +9,10 @@ $(document).ready(function(){
         .val(0);
 
     } else{
-     $(this).css("background-color", "navy");
+     $(this).css("background-color", "#162635");
      $(this).siblings()
        .attr("data-selected", "false")
-       .css("background-color", "grey");
+       .css("background-color", "#51616F");
      $(this).attr("data-selected","true");
      $(this).parentsUntil(".grandparent").find(".totHoursBox")
        .css("background-color", "white")

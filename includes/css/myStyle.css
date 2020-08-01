@@ -1,50 +1,68 @@
-
-.jumbotron{
+.container{
+  /* border: 1px solid #162635; */
+}
+.page-header{
+  height: 180px;
   text-align: center;
+  /* background-color: #DBE8F4; */
+  color: #162635;
 }
 
-.topCol{
-  background-color: AntiqueWhite ;
-  margin-left: 15px;
-  margin-right: 15px;
+.vertical-center{
+  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  min-height: 100vh; /* These two lines are counted as one :-)       */
+  display: flex;
+  align-items: center;
 }
 
-.leftCol{
-  background: rgb(218,244,255);
-  background: linear-gradient(180deg, rgba(218,244,255,1) 0%, rgba(225,241,247,1) 43%, rgba(255,255,255,1) 100%);
-  margin-top: -20px;
-  margin-bottom:  -20px;
-  border-right: solid thin black;
+.page-header h1{
+  font-size: 80px;
 }
 
-.middleCol{
-  /* background-color: Azure ; */
-  /* padding-left: 60px; */
+.page-header p{
+  font-size: 20px;
+}
+
+body {
+  background-color: #DBE8F4;
 }
 
 .wrapper{
-  background-color: #F1F1F1;
-
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-width: thin;
-  border-color: black;
-  border-style: solid;
-
+  /* border: 1px solid #162635; */
 }
+
+
+.leftCol{
+  /* border: 1px solid #162635; */
+}
+
+.middleCol{
+  /* border: 1px solid #162635; */
+}
+
+
 .rightCol{
-  /* background-color: Azure ; */
-
+  /* border: 1px solid #162635; */
 }
 
-.topCol{
-  background-color: AntiqueWhite ;
-  margin-left: 15px;
-  margin-right: 15px;
+.btn-secondary{
+  background-color: #51616F;
+}
+
+.btn-tsButton{
+  margin-top: 20px;
+  background-color: #162635;
+  border: 6px solid #162635;
+  color: #EAECEF;
+}
+
+.btn-tsButton:hover{
+  border-color: white;
+  color: #EAECEF;
 }
 
 .input-group>.input-group-prepend {
-    min-width: 130px;
+    min-width: 150px;
 }
 .input-group .input-group-text {
     width: 100%;

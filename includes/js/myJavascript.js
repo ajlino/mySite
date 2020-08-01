@@ -29,7 +29,6 @@ $(document).ready(function(){
 		var lastDay=momentOrigin.clone().endOf("month");
 		lastDay=lastDay.get("date");	//convert to an integer
 			//calculates the last day of the given month
-		console.log(lastDay);
 		$("#tsPayPeriod").text(momentOrigin.format("MMMM")+" "+y);
 
 		var momentClone=momentOrigin.clone();
@@ -37,26 +36,26 @@ $(document).ready(function(){
 		var monthMiddle;
 
 		if (lastDay==31){
-			monthMiddle = 16;
+			monthMiddle = 17;
 		} else if (lastDay == 29){
-			monthMiddle =15;
+			monthMiddle =16;
 		} else {
-			monthMiddle=(lastDay/2);
+			monthMiddle=((lastDay/2)+1)
 		}
 
 
 	//Math floor rounds down if there is a remainder
   for (var x=1; x<monthMiddle; x++){
 		momentClone=momentOrigin.clone().add(x-1, "days");
-    var formDate = momentClone.format("dd, MMM DD");
+    var formDate = momentClone.format("ddd, MMM Do");
     var html='<div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" id="hoursDay'+x+'" class="form-control text-center totHoursBox" min="0" max="99" placeholder="0" value=0 aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div>'
     $("#middleCol").append(html);
 
 
   }
-  for (var x=monthMiddle; x<(lastDay); x++){
+  for (var x=monthMiddle-1; x<(lastDay); x++){
 		momentClone=momentOrigin.clone().add(x, "days");
-    var formDate = momentClone.format("dd, MMM DD");
+    var formDate = momentClone.format("ddd, MMM Do");
 		var html='<div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" id="hoursDay'+x+'" class="form-control text-center totHoursBox" min="0" max="99" placeholder="0" value=0 aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div>'
     $("#rightCol").append(html);
 

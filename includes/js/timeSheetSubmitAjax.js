@@ -12,7 +12,10 @@ $(document).ready(function(){
         type: request_method,
         data : form_data
       }).done(function(response){
-        alert(response);
+        // alert(response);
+        if (response="New record created successfully"){
+          $("#submitSuccessModal").modal();
+        }
         // $("#server-results").html(response);  //innerHTML for div id server-results
         // var jsonData = JSON.parse(response);
         // console.log(jsonData);
