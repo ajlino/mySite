@@ -15,11 +15,10 @@
   <script src="includes/js/myJavascript.js"></script>
   <link rel="stylesheet" type="text/css" href="includes\css\myStyle.css">
   <script src="includes\js\moment.js"></script>
-  <script src="js/getDateforNewSheet.js"></script>
-  <script src="js/timeSheetSubmitAjax.js"></script>
   <script src="includes\js\newTimesheet.js"></script>
   <script type="text/javascript" src="includes/js/button-toggle.js"></script>
   <script src="includes/js/countHours.js"></script>
+  <script src="includes\js\timeSheetSubmitAjax.js"></script>
 </head>
 
 <body>
@@ -34,20 +33,22 @@
 
 
   <!-- <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet"> -->
+  <form class="form-inline justify-content-center" action="includes\php\sendData.php" method="post" id="submitTimesheet">
+
     <div class="row wrapper mt-3 ">
 
       <div class=" col-lg text-center leftCol" id="leftCol">
         <h3>Pay Period</h3>
         <div class="form-group choosePayPeriod">
-          <select class="form-control" id="year">
+          <select class="form-control" name="year" id="year">
             <option value="2020">2020</option>
             <option value="2021">2021</option>
             <option value="2022">2022</option>
             <option value="2023">2023</option>
-            <option value="2023">2023</option>
-            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
           </select>
-          <select class="form-control" id="month">
+          <select class="form-control" name="month" id="month">
             <option value="1">January</option>
             <option value="2">February</option>
             <option value="3">March</option>
@@ -79,15 +80,21 @@
           <h3>Total Shifts</h3>
           <h1 id="tallyShifts">0</h1>
         </div>
+        <div id="submitButton">
+          <button type="submit" class="btn btn-danger" form="submitTimesheet">Submit</button>
+        </div>
       </div>
-
 
       <div class=" col-lg  grandparent middleCol" id="middleCol">
       </div>
 
       <div class=" col-lg grandparent rightCol" id="rightCol">
-
       </div>
+
+        <input type="text" class=d-none id="yearForAjax" />
+        <input type="text" class=d-none id="monthForAjax" />
+
+    </form>
 
 
     </div>

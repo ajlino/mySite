@@ -2,13 +2,13 @@
 
 session_start();
 
-$tableName="timesheet3";
+$tableName="timesheet4";
 
 include_once 'timesheetDBH.php';
 
 $id = $_SESSION['id'];
-$year = $_POST['yr'];
-$month = $_POST['mth'];
+$year = $_POST['year'];
+$month = $_POST['month'];
 $firstName = $_SESSION['firstName'];
 $lastName = $_SESSION['lastName'];
 
@@ -34,19 +34,19 @@ else{
 
 
 
+$hours = "";
+$hoursValue = 0;
+
 for ($i=1; $i<32; $i++){
     $day='day'.$i;
-    $rb="radioButton_Day".$i;
-    $memo="memoDay".$i;
-    if (isset($_POST[$rb])){
-      $rbValue=$_POST[$rb];
-      $memoValue=$_POST[$memo];
+    $hours="hoursDay".$i;
+    if (isset($_POST[$hours])){
+      $hoursValue=$_POST[$hours];
     } else {
-      $rbValue=null;
-      $memoValue=null;
+      $hoursValue=null;
     }
 
-    $sql = "UPDATE $tableName SET $day='$rbValue', $memo='$memoValue' WHERE id='$id' AND yr='$year' AND mth='$month'";
+    $sql = "UPDATE $tableName SET $day='$hoursValue' WHERE id='$id' AND yr='$year' AND mth='$month'";
     mysqli_query($conn,$sql);
 }
 

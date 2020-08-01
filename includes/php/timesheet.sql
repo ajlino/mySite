@@ -1,4 +1,4 @@
-CREATE TABLE timesheet3 (
+CREATE TABLE timesheet4 (
     id varchar(256) not null ,
     firstName varchar(256) not null,
     lastName varchar(256) not null,
@@ -35,67 +35,9 @@ CREATE TABLE timesheet3 (
     day29 varchar(20) ,
     day30 varchar(20) ,
     day31 varchar(20) ,
-    memoDay1 varchar(256) ,
+    memo varchar(256) ,
 
-memoDay2 varchar(256) ,
 
-memoDay3 varchar(256) ,
-
-memoDay4 varchar(256) ,
-
-memoDay5 varchar(256) ,
-
-memoDay6 varchar(256) ,
-
-memoDay7 varchar(256) ,
-
-memoDay8 varchar(256) ,
-
-memoDay9 varchar(256) ,
-
-memoDay10 varchar(256) ,
-
-memoDay11 varchar(256) ,
-
-memoDay12 varchar(256) ,
-
-memoDay13 varchar(256) ,
-
-memoDay14 varchar(256) ,
-
-memoDay15 varchar(256) ,
-
-memoDay16 varchar(256) ,
-
-memoDay17 varchar(256) ,
-
-memoDay18 varchar(256) ,
-
-memoDay19 varchar(256) ,
-
-memoDay20 varchar(256) ,
-
-memoDay21 varchar(256) ,
-
-memoDay22 varchar(256) ,
-
-memoDay23 varchar(256) ,
-
-memoDay24 varchar(256) ,
-
-memoDay25 varchar(256) ,
-
-memoDay26 varchar(256) ,
-
-memoDay27 varchar(256) ,
-
-memoDay28 varchar(256) ,
-
-memoDay29 varchar(256) ,
-
-memoDay30 varchar(256) ,
-
-memoDay31 varchar(256) ,
 
 PRIMARY KEY(id, yr, mth)
 
