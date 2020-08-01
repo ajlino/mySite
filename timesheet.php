@@ -71,6 +71,7 @@
               <!-- Modal Header -->
               <div class="modal-header">
                 <h4 class="col modal-title text-center">Choose Year and Month</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
               </div>
 
               <!-- Modal body -->
