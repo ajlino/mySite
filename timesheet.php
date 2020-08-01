@@ -1,5 +1,10 @@
 <?php
   session_start();
+  if ($_SESSION["access"] == "owner" || $_SESSION["access"] == "admin" ){
+    $adminAccess = 'class="btn btn-tsButton adminTrue"';
+  } else {
+    $adminAccess = 'disabled class="btn btn-tsButton adminFalse"';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -22,11 +27,28 @@
 </head>
 
 <body>
+<div class="container">
+  <div class="page-header">
+      <h1>A.W.E.S.O.M -O 4000</h1>
 
-<div class="page-header">
-    <h1>A.W.E.S.O.M -O 4000</h1>
-    <p>The Timesheet Robot</p>
-</div>
+        <div class="row justify-content-center">
+          <div class="col-3">
+            <form action="admin.php">
+              <button type="submit" <?php echo $adminAccess ?> id="admin">Admin Options</button>
+            </form>
+          </div>
+          <div class="col-3">
+                <p>The Timesheet Robot</p>
+          </div>
+          <div class="col-3">
+            <form action="logout.php">
+              <button type="submit"  class="btn btn-tsButton logout" id="logout">Logout</button>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+
 
 <div class="container">
 
@@ -37,7 +59,7 @@
 
     <div class="row wrapper mt-3">
 
-      <div class="col-lg-4 col-md-2 affix col-lg-2 text-center leftCol" id="leftCol">
+      <div class="col-lg-4  col-lg-2 text-center leftCol" id="leftCol">
         <!-- <h3>Change Pay Period</h3> -->
         <button type="button" class="btn btn-tsButton w-100 mt-0" data-toggle="modal" data-target="#myModal" id="payPeriodSelector">Change Pay Period</button>
 
@@ -88,33 +110,6 @@
         </div>
 
 
-
-
-        <!-- <div class="form-group choosePayPeriod">
-          <select class="form-control" name="year" id="year">
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
-            <option value="2023">2023</option>
-            <option value="2024">2024</option>
-            <option value="2025">2025</option>
-          </select>
-          <select class="form-control" name="month" id="month">
-            <option value="1">January</option>
-            <option value="2">February</option>
-            <option value="3">March</option>
-            <option value="4">April</option>
-            <option value="5">May</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
-            <option value="9">September</option>
-            <option value="10">October</option>
-            <option value="11">November</option>
-            <option value="12">December</option>
-          </select>
-          <button type="button" class="btn btn-primary" id="createTimesheet">Create</button>
-        </div> -->
         <div class="name">
           <br />
           <br />

@@ -1,6 +1,31 @@
 .container{
   /* border: 1px solid #162635; */
 }
+
+.adminButton{
+  height: 100px;
+  width: 250px;
+  margin-top: 40px;
+  background-color: #162635;
+  border: 6px solid #162635;
+  color: #EAECEF;
+  border-radius: 20px;
+  font-size: 20px;
+}
+
+.btn-tsButton{
+  margin-top: 20px;
+  background-color: #162635;
+  border: 6px solid #162635;
+  color: #EAECEF;
+}
+
+.btn-tsButton:hover{
+  border-color: white;
+  color: #EAECEF;
+}
+
+
 .page-header{
   height: 180px;
   text-align: center;
@@ -21,6 +46,21 @@
 
 .page-header p{
   font-size: 20px;
+}
+
+.adminTrue{
+    background-color: #E00000;
+    border-color: #E00000;
+    color: #EAECEF;
+    /* visibility: hidden; */
+}
+
+.adminFalse{
+    visibility: hidden;
+}
+
+.logout{
+  text-align: right;
 }
 
 body {
@@ -49,17 +89,7 @@ body {
   background-color: #51616F;
 }
 
-.btn-tsButton{
-  margin-top: 20px;
-  background-color: #162635;
-  border: 6px solid #162635;
-  color: #EAECEF;
-}
 
-.btn-tsButton:hover{
-  border-color: white;
-  color: #EAECEF;
-}
 
 .input-group>.input-group-prepend {
     min-width: 150px;

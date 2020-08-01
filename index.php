@@ -14,6 +14,7 @@ require_once "includes/php/timesheetDBH.php";
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
+$access="";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -35,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT id, username, password, firstName, lastName FROM users WHERE username = ?";
+        $sql = "SELECT id, username, password, firstName, lastName, access FROM users WHERE username = ?";
 
         if($stmt = mysqli_prepare($conn, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -52,11 +53,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $firstName, $lastName);
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $firstName, $lastName, $access);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
-                            session_start();
+                            // session_start();
 
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
@@ -64,9 +65,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
                             $_SESSION["firstName"] = $firstName;
                             $_SESSION["lastName"] = $lastName;
+                            $_SESSION["access"]=$access;
 
+
+                            if ($access == "owner" || $access == "admin"){
+                              // Redirect user to admin page
+                              header("location: admin.php");
+                            } else {
                             // Redirect user to welcome page
                             header("location: timesheet.php");
+                            }
+
                         } else{
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";
@@ -96,17 +105,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/coolRadio.css">
+    <link rel="stylesheet" type="text/css" href="includes\css\myStyle.css">
     <style type="text/css">
         body{ font: 14px sans-serif; }
         .wrapper{ width: 350px; padding: 20px; margin: auto; }
     </style>
+
 </head>
 <body>
 
 
-  <div class="jumbotron">
-    <div class="jumboDiv">
+  <div class="container">
+    <div class="page-header">
       <h1>A.W.E.S.O.M.-0 4000</h1>
       <p>Timesheet Robot</p>
     </div>
@@ -132,7 +142,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   <span class="help-block"><?php echo $password_err; ?></span>
               </div>
               <div class="form-group">
-                  <input type="submit" class="btn btn-primary" value="Login">
+                  <input type="submit" class="btn btn-tsButton" value="Login">
               </div>
               <p>Don't have an account? <a href="Registration.php">Sign up now</a>.</p>
               <p>Forget your Password? <a href="passwordReset.php">Reset</a>.</p>
