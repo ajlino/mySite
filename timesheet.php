@@ -116,6 +116,8 @@
           <button type="button" class="btn btn-primary" id="createTimesheet">Create</button>
         </div> -->
         <div class="name">
+          <br />
+          <br />
           <h3 class="result"><?php echo $_SESSION["firstName"]." ".$_SESSION["lastName"]; ?></h3>
         </div>
         <div class="date">
