@@ -40,8 +40,11 @@ foreach($uniqueNames as $name){
     $sql = "SELECT $field FROM $tableName WHERE $field = '$name'";
     $result = mysqli_query($conn, $sql);
     if (mysqli_num_rows($result) > 0){
-      array_push(${$name.'_array'}, $field);
+      array_push(${$name.'_array'}, "x");
+    } else{
+      array_push(${$name.'_array'}, "0");
     }
+
   }
   array_push($allArrays, ${$name.'_array'});
 }

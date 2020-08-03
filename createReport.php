@@ -29,18 +29,25 @@
      <p>The Timesheet Robot</p>
  </div>
 
-<div class="container">
-<form class="form" action="includes\php\createReportDataHandler.php" id="createReport" method="post" >
- <div class="row">
-   <div class="col">
-     <div class="form-group text-center">
+<div class="container-fluid">
+  <form class="form" action="includes\php\createReportDataHandler.php" id="createReport" method="post" >
+    <div class="row">
+      <div class="col">
+        <div class="form-group text-center">
+          <button type="submit" class="adminButton">Current Month</button>
+          <br />
+        </div>
+      </div>
+    </div>
+  </form>
 
-         <button type="submit" class="adminButton">Current Month</button>
-       <br />
-     </div>
+  <div class="debug" id="debug">
+  </div>
 
-   </div>
- </div>
+  <div class="report">
+    <table id="table">
+    </table>
+  </div>
 </div>
 
 </body>
