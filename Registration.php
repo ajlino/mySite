@@ -1,6 +1,6 @@
 <?php
 // Include config file
-require_once "php/timesheetDBH.php";
+require_once "includes/php/timesheetDBH.php";
 
 // Define variables and initialize with empty values
 $username = $firstName = $lastName = $email = $password = $confirm_password = "";
@@ -184,7 +184,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-default" value="Reset">
             </div>
-            <p>Already have an account? <a href="login.php">Login here</a>.</p>
+            <p>Already have an account? <a href="index.php">Login here</a>.</p>
         </form>
     </div>
 </body>

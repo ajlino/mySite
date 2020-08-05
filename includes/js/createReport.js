@@ -24,15 +24,22 @@ $(document).ready(function(){
         //   $("#debug").append("<br>");
         // }
 
+        var html="";
+
         //create top row
-        $("#table").append("<tr>")
-          .append("<th>Last Name</th>");
+        $("#table").append("<thead>")
+          .append("<tr>")
+          // .append("<th>Last Name</th>");
+          .append("<th></th>");
+
         for(var x=1; x<32; x++){
-          $("#table").append("<th>Day"+x+"</th>");
+          $("#table").append('<th class="rotate-45"><div><span>September '+x+'</span></div></th>"');
         }
         $("#table").append("</tr>");
+        $("#table").append("</thead>");
 
         //create table
+        $("#table").append("<tbody");
         for (var x=0; x<jsonData.length; x++){
           $("#table").append("<tr>");
           for(var y=0; y<jsonData[x].length; y++){
@@ -40,6 +47,7 @@ $(document).ready(function(){
           }
           $("#table").append("</tr>");
         }
+        $("#table").append("</tbody>");
 
 
 

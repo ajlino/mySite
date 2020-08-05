@@ -29,7 +29,7 @@
      <p>The Timesheet Robot</p>
  </div>
 
-<div class="container-fluid">
+<div class="container">
   <form class="form" action="includes\php\createReportDataHandler.php" id="createReport" method="post" >
     <div class="row">
       <div class="col">
@@ -41,11 +41,11 @@
     </div>
   </form>
 
-  <div class="debug" id="debug">
-  </div>
 
-  <div class="report">
-    <table id="table">
+
+  <div class="scrollable-table">
+    <table class="table table-striped table-header-rotated" id="table">
+
     </table>
   </div>
 </div>
