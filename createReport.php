@@ -1,4 +1,4 @@
-?<?php
+<?php
 
  ?>
 
@@ -20,6 +20,7 @@
    <script src="includes/js/countHours.js"></script>
    <script src="includes\js\timeSheetSubmitAjax.js"></script>
    <script src="includes\js\createReport.js"></script>
+   <script src="includes\js\createCSV.js"></script>
  </head>
 
  <body>
@@ -29,12 +30,13 @@
      <p>The Timesheet Robot</p>
  </div>
 
-<div class="container">
+<div class="container-fluid">
   <form class="form" action="includes\php\createReportDataHandler.php" id="createReport" method="post" >
     <div class="row">
       <div class="col">
         <div class="form-group text-center">
           <button type="submit" class="adminButton">Current Month</button>
+          <button type="button" class=" btn adminButton" id="csvButton" disabled hidden>Create CSV</button>
           <br />
         </div>
       </div>

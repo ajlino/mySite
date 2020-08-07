@@ -48,7 +48,15 @@ foreach($uniqueNames as $name){
   }
   array_push($allArrays, ${$name.'_array'});
 }
+
+
+
+
 echo json_encode($allArrays);
+
+
+
+
 
 
 mysqli_close($conn);
