@@ -6,6 +6,16 @@ body {
   background-color: #DBE8F4;
 }
 
+.navbar{
+  background-color: #DBE8F4 !important;
+}
+
+.nav-link{
+  color: #162635;
+}
+
+
+
 /* ------------------------- */
 .table-header-rotated th.row-header{
   width: auto;
@@ -64,6 +74,8 @@ body {
   // white-space: nowrap; /*whether to display in one line or not*/
 }
 /* ------------------------- */
+
+
 .adminButton{
   height: 100px;
   width: 250px;

@@ -24,6 +24,8 @@
   <script type="text/javascript" src="includes/js/button-toggle.js"></script>
   <script src="includes/js/countHours.js"></script>
   <script src="includes\js\timeSheetSubmitAjax.js"></script>
+  <script src="includes\js\prefill.js"></script>
+
 </head>
 
 <body>
@@ -32,27 +34,39 @@
       <h1>A.W.E.S.O.M -O 4000</h1>
 
         <div class="row justify-content-center">
-          <div class="col-3">
-            <form action="admin.php">
+          <!-- <div class="col-3"> -->
+            <!-- <form action="admin.php">
               <button type="submit" <?php echo $adminAccess ?> id="admin">Admin Options</button>
-            </form>
-          </div>
+            </form> -->
+          <!-- </div> -->
           <div class="col-3">
                 <p>The Timesheet Robot</p>
           </div>
-          <div class="col-3">
+          <!-- <div class="col-3">
             <form action="logout.php">
               <button type="submit"  class="btn btn-tsButton logout" id="logout">Logout</button>
             </form>
-          </div>
+          </div> -->
         </div>
       </div>
   </div>
 
+  <nav class="navbar navbar-expand-sm bg-light justify-content-center">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="admin.php">Admin Options</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="prefill" href="#">Prefill</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout.php">Logout</a>
+      </li>
+    </ul>
+  </nav>
+
 
 <div class="container">
-
-
 
   <!-- <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet"> -->
   <form class="form" action="includes\php\sendData.php" method="post" id="submitTimesheet">

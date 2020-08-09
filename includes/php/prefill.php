@@ -1,7 +1,11 @@
 <?php
-
+session_start();
 include_once 'timesheetDBH.php';
 $tableName="august2020";
+
+$lastName = $_SESSION['lastName'];
+$year = $_POST['year'];
+$month = $_POST['month'];
 
 //Make an array ($fieldArray) of all of the column(field) names
 $sql = "SELECT * FROM $tableName";
@@ -32,33 +36,36 @@ sort($uniqueNames);
 $allArrays = array(); //will be a 2 dimensional array
 
 //create array starting with attending name, then all columns name appears in, then break
-foreach($uniqueNames as $name){
-  //name of array will be exp: $Smith_array
-  ${$name.'_array'} = array();  //wrapping in {} allows for dynamic naming of array!!
-  array_push(${$name.'_array'}, $name);
-  foreach($fieldArray as $field){
-    $sql = "SELECT $field FROM $tableName WHERE $field = '$name'";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) > 0){
-      array_push(${$name.'_array'}, "x");
-    } else{
-      array_push(${$name.'_array'}, "0");
-    }
 
+$match=false;
+
+foreach($uniqueNames as $name){
+  if ($name == $lastName){
+    $match=true;
+    //name of array will be exp: $Smith_array
+    ${$name.'_array'} = array();//wrapping in {} allows for dynamic naming of array!!
+    foreach($fieldArray as $field){
+      $sql = "SELECT $field FROM $tableName WHERE $field = '$name'";
+      $result = mysqli_query($conn, $sql);
+      if (mysqli_num_rows($result) > 0){
+        array_push(${$name.'_array'}, "x");
+      } else{
+        array_push(${$name.'_array'}, "0");
+      }
+    }
+    echo json_encode(${$name.'_array'});
+    mysqli_close($conn);
   }
-  array_push($allArrays, ${$name.'_array'});
+}
+
+if ($match == false){
+  echo "no match";
+  mysqli_close($conn);
 }
 
 
 
 
-echo json_encode($allArrays);
 
 
-
-
-
-
-mysqli_close($conn);
-
-?>
+  ?>
