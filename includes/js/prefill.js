@@ -5,11 +5,12 @@ $(document).ready(function(){
 
     var year=$("#year").val();
     var month=$("#month").val();
+    var tableName=year+"_"+month; //example: 2020_7 (no leading zero)
 
 
     var post_url = "includes/php/prefill.php" //get form action url
   	var request_method = "post"; //get form GET/POST method
-  	var form_data = "year="+year+"&month="+month; //Encode form elements for submission
+  	var form_data = "year="+year+"&month="+month+"&tableName="+tableName; //Encode form elements for submission
 
 
     $.ajax({
@@ -17,8 +18,21 @@ $(document).ready(function(){
         type: request_method,
         data : form_data
     }).done(function(response){
+//         console.log (response);
+//     });
+//   });
+// });
+
+
+    }).done(function(response){
       if (response == "no match"){
-        alert ("No matching name");
+        $("#prefillModal").modal();
+        $("#prefillErrorMessage").text("Unable to locate name on schedule.");
+
+      } else if (response == "no table exists"){
+        $("#prefillModal").modal();
+        $("#prefillErrorMessage").text("Prefill data unavailable.");
+
       } else{
         var jsonData = JSON.parse(response);
         console.log(jsonData);
