@@ -11,6 +11,7 @@ $year = $_POST['year'];
 $month = $_POST['month'];
 $firstName = $_SESSION['firstName'];
 $lastName = $_SESSION['lastName'];
+$memo = $_POST['memo'];
 
 $_SESSION['year'] = $year;
 $_SESSION['month'] = $month;
@@ -49,6 +50,10 @@ for ($i=1; $i<32; $i++){
     $sql = "UPDATE $tableName SET $day='$hoursValue' WHERE id='$id' AND yr='$year' AND mth='$month'";
     mysqli_query($conn,$sql);
 }
+$sql = "UPDATE $tableName SET memo ='$memo' WHERE id='$id' AND yr='$year' AND mth='$month'";
+mysqli_query($conn,$sql);
+
+
 
 
 

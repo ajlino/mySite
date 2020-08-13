@@ -67,8 +67,6 @@
 
 
 <div class="container">
-
-  <!-- <form class="form" action="php\includes\php\sendData.php" method="post" id="submitTimesheet"> -->
   <form class="form" action="includes\php\sendData.php" method="post" id="submitTimesheet">
 
     <div class="row wrapper mt-3">
@@ -143,6 +141,13 @@
           <h3>Total Shifts</h3>
           <h1 id="tallyShifts">0</h1>
         </div>
+
+        <div class="memo">
+          <br />
+          <button type="button" class="btn btn-tsButton w-100 mt-0" data-toggle="modal" data-target="#memoModal" id="memo">Include Memo</button>
+
+        </div>
+
       </div>
 
       <div class="col-lg-4 grandparent middleCol" id="middleCol">
@@ -150,6 +155,8 @@
 
       <div class="col-lg-4  grandparent rightCol" id="rightCol">
       </div>
+
+
 
     </form>
   </div>
@@ -199,6 +206,31 @@
     </div>
   </div>
 </div>
+
+<!-- Modal Memo -->
+<div class="modal fade" id="memoModal" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Memo</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form role = "form">
+          <div class = "form-group">
+            <textarea name="memo" form="submitTimesheet" class = "form-control" rows = "3" placeholder = "Max 250 characters..." ></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">Clear</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Enter</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
