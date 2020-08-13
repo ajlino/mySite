@@ -55,7 +55,7 @@ $(document).ready(function(){
   for (var x=monthMiddle-1; x<(lastDay); x++){
 		momentClone=momentOrigin.clone().add(x, "days");
     var formDate = momentClone.format("ddd, MMM Do");
-		var html='<div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+x+'" id="hoursDay'+x+'" class="form-control text-center totHoursBox" min="0" max="99" placeholder="0" value=0 aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div>'
+		var html='<div class="input-group"> <div class="input-group-prepend"> <span class="input-group-text">'+formDate+'</span> </div> <div class="btn-group"> <button type="button" class="btn btn-secondary" data-selected="false" value="10">10</button> <button type="button" class="btn btn-secondary" data-selected="false" value="8">8</button> </div> <input type="number" name="hoursDay'+(x+1)+'" id="hoursDay'+x+'" class="form-control text-center totHoursBox" min="0" max="99" placeholder="0" value=0 aria-label="Input group example" aria-describedby="btnGroupAddon"></input> </div>'
     $("#rightCol").append(html);
 
   }
